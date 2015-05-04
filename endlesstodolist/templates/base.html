@@ -1,0 +1,38 @@
+{#
+	LOCAL RULES
+	- No tags but divs and spans may have classes or ids.
+	- Blocks must be named after the tag id or single-instance HTML tag they fill.
+	- Tags that only appear once must have an id and no class.
+	- Tags that appear more than once must have a class and no id.
+#}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}Endless To-Do List{% endblock %}</title>
+	</head>
+	<body>
+		<div id="body">
+			<div id="header">
+				<div id="title">
+					<h1>Endless To-Do List</h1>
+					<h2>By Cade Gillem</h2>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li><a href="/home/">Home</a></li>
+						<li><a href="/about/">About</a></li>
+						<li><a href="http://github.com/cpgillem">Author</a></li>
+						<li><a href="http://github.com/cpgillem/todo_app">Github</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="content">
+				{% block content %}{% endblock %}
+			</div>
+			<div id="footer">
+				<p>By <a href="http://cadegillem.me">Cade Gillem</a>, 2015.</p>
+			</div>
+		</div>
+	</body>
+</html>
