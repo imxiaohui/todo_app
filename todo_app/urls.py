@@ -13,5 +13,5 @@ urlpatterns = [
     # /users/[username] -> User by name
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^/', include('endlesstodolist.urls')),
+    url(r'^$', include('endlesstodolist.urls')),
 ]
