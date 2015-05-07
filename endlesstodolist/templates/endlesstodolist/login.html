@@ -1,0 +1,14 @@
+{% extends "endlesstodolist/base.html" %}
+{% block content %}
+
+<div id="login">
+  <form action="." method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="submit" value="Login"/>
+  </form>
+</div>
+
+<p>This is the main home page before logging in. Welcome!</p>
+
+{% endblock %}
