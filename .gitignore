@@ -4,3 +4,6 @@
 
 # Lock files from text editors
 **/*.swp
+
+# Database
+**/*.sqlite3
