@@ -13,7 +13,22 @@ def index(request):
         if request.method == 'POST':
             form = LoginForm(request.POST)
             if form.is_valid():
-                return HttpResponseRedirect('/home/')
+                # Authenticate
+                user = authenticate(
+                    username=form.cleaned_data['username'],
+                    password=form.cleaned_data['password']
+                )
+                if user is not None and user.is_active:
+                    # Log the user in.
+                    login(request, user)
+                    return HttpResponseRedirect('/home/')
+                else:
+                    form = LoginForm()
+                    return render(request, 'endlesstodolist/login.html', {
+                        'form': form,
+                        'message': "Login Error"
+                    })
+
         else:
             form = LoginForm()
             return render(request, 'endlesstodolist/login.html', {

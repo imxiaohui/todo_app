@@ -1,6 +1,6 @@
 {% extends "endlesstodolist/base.html" %}
 {% block content %}
-
+{% if message %}<div id="message"><p>{{ message }}</div>{% endif %}
 <div id="login">
   <form action="." method="post">
     {% csrf_token %}
