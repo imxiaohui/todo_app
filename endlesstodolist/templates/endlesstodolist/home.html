@@ -2,6 +2,12 @@
 
 {% block content %}
 
-<p>This is the user's home.</p>
+<ul>
+  {% for task in tasks %}
+    <li>{{ task.description }}</li>
+  {% endfor %}
+</ul>
+
+<a href="/logout/">Log Out</a>
 
 {% endblock %}
