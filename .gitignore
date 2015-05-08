@@ -6,4 +6,4 @@
 **/*.swp
 
 # Database
-**/*.sqlite3
+**.sqlite3
